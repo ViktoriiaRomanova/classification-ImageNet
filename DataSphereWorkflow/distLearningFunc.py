@@ -10,7 +10,6 @@ from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
 from processingDataSet import ImageNetDataset
-from VGGModel import vgg19
 
 
 def fit_eval_epoch(model: DDP,
@@ -79,7 +78,7 @@ def prepare_dataset(data: ImageNetDataset, rank: int,
     return data_loader
 
 
-def worker(rank: int, world_size: int, train_data: List[Tuple[str, int]],
+def worker(rank: int, model: nn.Module, world_size: int, train_data: List[Tuple[str, int]],
            val_data: List[Tuple[str, int]], batch_size: int,
            seed: int, epochs: int, isGPU: bool = True) -> None:
     """Describe training process which will be implemented for each worker."""
@@ -91,8 +90,7 @@ def worker(rank: int, world_size: int, train_data: List[Tuple[str, int]],
     val_loader = prepare_dataset(val_data, rank, world_size, batch_size, seed)
 
     device = torch.device(rank) if isGPU else torch.device('cpu')
-
-    model = vgg19(num_classes = 10).to(device)
+    model.to(device)
 
     model = DDP(model, device_ids = [rank] if isGPU else None,
                 output_device = rank if isGPU else None,
