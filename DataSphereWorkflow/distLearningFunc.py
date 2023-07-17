@@ -74,7 +74,8 @@ def prepare_dataset(data: ImageNetDataset, rank: int,
                                  seed = seed, drop_last = True)
     data_loader = DataLoader(data, batch_size = batch_size,
                              shuffle = False, drop_last = True,
-                             sampler = sampler)
+                             sampler = sampler, pin_memory = True,
+                             pin_memory_device = str(torch.device(rank)))
     return data_loader
 
 
