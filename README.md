@@ -16,7 +16,7 @@ This project contains:
 
 1. Check all paths to project files or dataset that they are consistent with yours.
 
-## Versions of main used libraries[^1,2]
+## Versions of main used libraries[^1][^2]
 
 | Library | Clabolatory | DataSphere |
 | :--- | :---: | :---: |
@@ -48,12 +48,12 @@ This project contains:
 ## Results
 
 Validation metrics:
-- Accuracy(f1-score 'micro'):  91%. 
+- Accuracy (f1-score 'micro'):  91%. 
 - F1-score('macro'):
  
 Train took 60 epoch, start learning rate set to 0.01. Optimizer SGD with momentum 0.9 showed better results than Adam. Other training parameters could be found [here](ColabWorckflow/trainVGGModel.ipynb).
 
-![Visualisation shows how sure model in the answers][/assets/images/example_results.png]
+![Visualisation shows how sure model in the answers](assets/images/example_results.png)
 
 
 ## Useful links
