@@ -41,7 +41,7 @@ This project contains:
 ## Overview
   Project contains VGG19 and VGG16 architecture with opportunity to choose amount of classes (max ==1000). Also it has simple dataset analysis and filtration gray pictures.
     
-  Submitted model weights (ten classes) trained on ImageNet for [VGG19 architecture](#article).
+  Submitted model weights (ten classes) trained on ImageNet for [VGG19 architecture](https://arxiv.org/abs/1409.1556).
 
   In addition project contains different flake configurations for [python files](setup.cfg) and [Jupyter Notebooks](tox.ini).
 
@@ -60,11 +60,13 @@ Train took 60 epoch, start learning rate set to 0.01. Optimizer SGD with momentu
 
 ## Useful links
 
-1. [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556) {#article}
+1. [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
 1. [Distributed and parallel training tutorials](https://pytorch.org/tutorials/distributed/home.html)
 1. [Single-machine model parallel best practices](https://pytorch.org/tutorials/intermediate/model_parallel_tutorial.html)
 1. [Technologies behind Distributed Deep Learning: AllReduce](https://tech.preferred.jp/en/blog/technologies-behind-distributed-deep-learning-allreduce/)
 1. [A Comprehensive Tutorial to Pytorch DistributedDataParallel](https://medium.com/codex/a-comprehensive-tutorial-to-pytorch-distributeddataparallel-1f4b42bb1b51)
 
+
+## Feedback
 
 :lady_beetle: If you found any kind of errors or typos in this project please let me know :vulcan_salute:
