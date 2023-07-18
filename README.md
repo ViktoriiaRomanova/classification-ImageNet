@@ -1,13 +1,13 @@
 # Classification-ImageNet 
 
-Simple single/multi CPU/GPU example of training classification model on PyTorch.
+Simple single/multi CPU/GPU example for training classification model on PyTorch.
 
 This project contains: 
-  * VGG model trained on a single GPU for the platforms:
+  * VGG model architecture and workflow for training on a single GPU for the platforms:
     * Google Colaboratory
     * Yandex DataSphere
 
-  * multi CPU/GPU workflow trained in:
+  * multi CPU/GPU workflow for the platforms:
     * Yandex DataSphere
 ## Getting started
 1. Download the project or files for preferable platform and case. 
@@ -20,23 +20,23 @@ This project contains:
 
 | Library | Clabolatory | DataSphere |
 | :--- | :---: | :---: |
-| python | 3.10.12 | 3.8.12 | 
-| kaggle | - | 1.5.8 |
+| python | 3.10.12 | 3.9.16 | 
+| kaggle | - | 1.5.13 |
 | torch | 2.0.1+cu118 | 1.13.1+cu117[^3] |
-| torchvision | 0.15.2+cu118 | 0.10.1+cu111 |
+| torchvision | 0.15.2+cu118 | 0.14.1 |
 | torchsummary | 1.5.1 | 1.5.1 |
-| matplotlib | 3.7.1 |  3.1.3 |
-| pandas | - | 0.25.3 | 
-| sklearn | 1.2.2 | 0.22.1 |
-| numpy | 1.22.4 | 1.19.2 |
+| matplotlib | 3.7.1 |  3.3.3 |
+| pandas | - | 1.4.4 | 
+| sklearn | 1.2.2 | 1.2.2 |
+| numpy | 1.22.4 | 1.24.2 |
 | pillow | 8.4.0 | 9.5.0 |
-| tqdm | 4.65.0 | 4.50.0 |
+| tqdm | 4.65.0 | 4.65.0 |
 
 [^1]: If library version is skipped than it wasn't used for this platform.
 
 [^2]: This list is not include flake8 libraries. This checks was only made to keep code style and not mandatory.
 
-[^3]: For distributive training on GPU and torch 1.9.1+cu 111 use backend: "gloo", as "nccl" is not working properly.
+[^3]: For distributive training on GPU and torch 1.9.1+cu111 use backend: "gloo", as "nccl" is not working properly.
 
 ## Overview
   Project contains VGG19 and VGG16 architecture with opportunity to choose amount of classes (max ==1000). Also it has simple dataset analysis and filtration gray pictures.
@@ -49,11 +49,13 @@ This project contains:
 
 Validation metrics:
 - Accuracy (f1-score 'micro'):  91%. 
-- F1-score('macro'):
+- F1-score('macro'): 91%
  
-Train took 60 epoch, start learning rate set to 0.01. Optimizer SGD with momentum 0.9 showed better results than Adam. Other training parameters could be found [here](ColabWorckflow/trainVGGModel.ipynb).
+Train took 60 epoch, start learning rate set to 0.01. Optimizer SGD with momentum 0.9 showed better results than Adam. Other training parameters could be found [here](ColabWorkflow/trainVGGModel.ipynb).
 
-![Visualisation shows how sure model in the answers](assets/images/example_results.png)
+
+**Visualisation on random 16 pictures from validation dataset shows how sure model in the answers**
+![Visualisation](assets/images/example_results.png)
 
 
 ## Useful links
@@ -65,4 +67,4 @@ Train took 60 epoch, start learning rate set to 0.01. Optimizer SGD with momentu
 1. [A Comprehensive Tutorial to Pytorch DistributedDataParallel](https://medium.com/codex/a-comprehensive-tutorial-to-pytorch-distributeddataparallel-1f4b42bb1b51)
 
 
-:lady_beetle: If you found any kind of errors or typos in this project please let me know :hugs:
+:lady_beetle: If you found any kind of errors or typos in this project please let me know :vulcan_salute:
