@@ -36,22 +36,27 @@ This project contains:
 
 [^2]: This list is not include flake8 libraries. This checks was only made to keep code style and not mandatory.
 
-[^3]: For distributive training on GPU and torch 1.9.1+cu111 use backend: "gloo", as "nccl" is not working properly.
+[^3]: :warning: For distributive training on GPU and torch 1.9.1+cu111 use backend: "gloo", as "nccl" is not working properly. :warning:
 
 ## Overview
   Project contains VGG19 and VGG16 architecture with opportunity to choose amount of classes (max ==1000). Also it has simple dataset analysis and filtration gray pictures.
     
-  Submitted model weights (ten classes) trained on ImageNet for [VGG19 architecture](https://arxiv.org/abs/1409.1556).
+  Model (ten classes)  weights in published release was trained on ImageNet dataset for [VGG19 architecture](https://arxiv.org/abs/1409.1556).
 
-  In addition project contains different flake configurations for [python files](setup.cfg) and [Jupyter Notebooks](tox.ini).
+  *Additional info:  project contains different flake configurations for [python files](setup.cfg) and [Jupyter Notebooks](tox.ini).*
 
 ## Results
 
-Validation metrics:
-- Accuracy (f1-score 'micro'):  91%. 
-- F1-score('macro'): 91%
+Metrics on validation dataset:
+- Accuracy(f1-score 'micro'):  91%,
+- F1-score('macro'): 91%.
  
-Train took 60 epoch, start learning rate set to 0.01. Optimizer SGD with momentum 0.9 showed better results than Adam. Other training parameters could be found [here](ColabWorkflow/trainVGGModel.ipynb).
+Short train notes: 
+  - Train took 60 epoch, 
+  - Start learning rate set to 0.01,
+  - Optimizer SGD with momentum 0.9 showed better results than Adam.
+  
+  Other training parameters could be found [here](ColabWorkflow/trainVGGModel.ipynb).
 
 
 **Visualisation on random 16 pictures from validation dataset shows how sure model in the answers**
