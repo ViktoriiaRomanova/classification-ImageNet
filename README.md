@@ -34,7 +34,7 @@ This project contains:
     * DataSphere (multi vCPU/GPU): [train_vDistributedDataParallel.ipynb](/DataSphereWorkflow/train_vDistributedDataParallel.ipynb)
 
 
-## Versions of main used libraries \[^1][^2]
+## Versions of main used libraries [^1][^2]
 
 | Library | Colaboratory | DataSphere |
 | :--- | :---: | :---: |
