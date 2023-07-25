@@ -14,8 +14,8 @@ This project contains:
 
 ## Getting started
 
-1. Download dataset from [Kaggle](https://www.kaggle.com/competitions/imagenet-object-localization-challenge/data). It is not a classification challenge, but it contains all ImageNet dataset. Instructions for downloading dataset (or part of it) you may find [here](https://github.com/Kaggle/kaggle-api). **To download all dataset  execute [getDataSet.ipynb](/DataSphereWorkflow/getDataSet.ipynb) with preset [API credentials](https://github.com/Kaggle/kaggle-api#api-credentials).** 
-    * Training prosess for all platform and cases ([Colab single GPU](/ColabWorkflow/trainVGGModel.ipynb), [DataSphere single GPU](/DataSphereWorkflow/trainVGGModel.ipynb), [DataSphere multi GPU](/DataSphereWorkflow/train_vDistributedDataParallel.ipynb)) gets filtered 10 classes data from file 'filtered_data_10class.pkl' wich can be obtained by executing files: [getDataSet.ipynb](/DataSphereWorkflow/getDataSet.ipynb) -> [getTenClassDataSet.ipynb](/DataSphereWorkflow/getTenClassDataSet.ipynb). 
+1. Download dataset from [Kaggle](https://www.kaggle.com/competitions/imagenet-object-localization-challenge/data). It is not a classification challenge, but it contains all ImageNet dataset. Instructions for downloading dataset (or part of it) you may find [here](https://github.com/Kaggle/kaggle-api). **To download all dataset  execute [getDataSet.ipynb](/DataSphereWorkflow/getDataSet.ipynb) with preset of [API credentials](https://github.com/Kaggle/kaggle-api#api-credentials).** 
+    * Training process for all platforms and cases ([Colab single GPU](/ColabWorkflow/trainVGGModel.ipynb), [DataSphere single GPU](/DataSphereWorkflow/trainVGGModel.ipynb), [DataSphere multi GPU](/DataSphereWorkflow/trainDistributedDataParallel.ipynb)) gets filtered **10 classes** data from file 'filtered_data_10class.pkl' wich can be obtained by executing files: [getDataSet.ipynb](/DataSphereWorkflow/getDataSet.ipynb) -> [getTenClassDataSet.ipynb](/DataSphereWorkflow/getTenClassDataSet.ipynb). 
     
     * Additional file to check dataset content: [researchDataSet.ipynb](/DataSphereWorkflow/researchDataSet.ipynb).
 
@@ -24,17 +24,17 @@ This project contains:
     * For YandexDataSpere:
       * Single GPU case: [VGGModel.py](VGGModel.py), [processingDataSet.py](processingDataSet.py), [trainVGGModel.ipynb](/DataSphereWorkflow/trainVGGModel.ipynb).
 
-      * Multi vCPU/GPU case: [VGGModel.py](VGGModel.py), [processingDataSet.py](processingDataSet.py), [distLearingFunc.py](/DataSphereWorkflow/distLearningFunc.py), [train_vDistributedDataParallel.ipynb](/DataSphereWorkflow/train_vDistributedDataParallel.ipynb)
+      * Multi vCPU/GPU case: [VGGModel.py](VGGModel.py), [processingDataSet.py](processingDataSet.py), [distLearingFunc.py](/DataSphereWorkflow/distLearningFunc.py), [trainDistributedDataParallel.ipynb](/DataSphereWorkflow/trainDistributedDataParallel.ipynb)
 
 1. In downloaded files check all paths to project files or dataset that they are consistent with yours.
 
 1. To start training process use:
     * Colab (single GPU): [trainVGGModel.ipynb](/ColabWorkflow/trainVGGModel.ipynb)
     * DataSphere (single GPU): [trainVGGModel.ipynb](/DataSphereWorkflow/trainVGGModel.ipynb)
-    * DataSphere (multi vCPU/GPU): [train_vDistributedDataParallel.ipynb](/DataSphereWorkflow/train_vDistributedDataParallel.ipynb)
+    * DataSphere (multi vCPU/GPU): [trainDistributedDataParallel.ipynb](/DataSphereWorkflow/trainDistributedDataParallel.ipynb)
 
 
-## Versions of main used libraries [^1][^2]
+## Versions of main used libraries[^1][^2]
 
 | Library | Colaboratory | DataSphere |
 | :--- | :---: | :---: |
@@ -57,7 +57,7 @@ This project contains:
 [^3]: :warning: For distributive training on GPU and torch 1.9.1+cu111 use backend: "gloo", as "nccl" does not work properly. :warning:
 
 ## Overview
-  Project contains VGG19 and VGG16 architectures with opportunity to choose amount of classes (max == 1000). Also it has simple dataset analysis and filtration gray pictures.
+  Project contains VGG19 and VGG16 architectures with opportunity to choose amount of classes (max == 1000). Also it has a simple dataset analysis and a filtration of gray pictures.
     
   Model (only 10 classes)  weights in published release was trained on ImageNet dataset for [VGG19 architecture](https://arxiv.org/abs/1409.1556).
 
@@ -69,8 +69,8 @@ Metrics on validation dataset:
 - Accuracy(f1-score 'micro'):  91%,
 - F1-score('macro'): 91%.
  
-Short train notes: 
-  - Train took 60 epoch, 
+Short training notes: 
+  - Training took 60 epoch, 
   - Start learning rate was set to 0.01,
   - Optimizer SGD with momentum 0.9 showed better results than Adam.
   
